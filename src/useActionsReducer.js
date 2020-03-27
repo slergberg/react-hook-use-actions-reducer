@@ -1,4 +1,4 @@
-import { useMemo, useReducer, useRef, useEffect } from 'react'
+import { useMemo, useReducer, useRef } from 'react'
 
 function createActionsReducer(actions) {
   return function actionsReducer(state, action) {
@@ -35,12 +35,6 @@ export function useActionsReducer(actions, initialArg, initializer) {
   const [state, dispatch] = useReducer(reducer, initialArg, initializer)
 
   const dispatchRef = useRef(dispatch)
-  useEffect(() => {
-    dispatchRef.current = dispatch
-    return () => {
-      dispatchRef.current = () => {}
-    }
-  }, [dispatch, dispatchRef])
 
   const dispatchers = useMemo(
     () => createActionsDispatchers(actions, dispatchRef),
