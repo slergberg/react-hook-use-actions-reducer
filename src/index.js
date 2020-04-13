@@ -1,1 +1,1 @@
-export * from './useActionsReducer'
+export { default } from './useActionsReducer'

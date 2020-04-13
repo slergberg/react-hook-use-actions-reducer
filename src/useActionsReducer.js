@@ -29,7 +29,7 @@ function createActionsDispatchers(actions, dispatchRef) {
   )
 }
 
-export function useActionsReducer(actions, initialArg, initializer) {
+export default function useActionsReducer(actions, initialArg, initializer) {
   const reducer = useMemo(() => createActionsReducer(actions), [actions])
 
   const [state, dispatch] = useReducer(reducer, initialArg, initializer)
