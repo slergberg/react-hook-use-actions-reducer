@@ -1,6 +1,6 @@
 {
   "name": "@slergberg/react-hook-use-actions-reducer",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A verty simple useReducer that supports actions for React",
   "keywords": [
     "actions",
